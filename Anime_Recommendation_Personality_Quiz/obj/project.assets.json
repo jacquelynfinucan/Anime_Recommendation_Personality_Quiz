@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\jacqu\\.nuget\\packages\\": {}
+    "C:\\Users\\Student\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jacqu\\source\\repos\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
+      "projectUniqueName": "C:\\Users\\Student\\Documents\\Kev Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
       "projectName": "Anime_Recommendation_Personality_Quiz",
-      "projectPath": "C:\\Users\\jacqu\\source\\repos\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
-      "packagesPath": "C:\\Users\\jacqu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jacqu\\source\\repos\\Anime_Recommendation_Personality_Quiz\\obj\\",
+      "projectPath": "C:\\Users\\Student\\Documents\\Kev Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
+      "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Student\\Documents\\Kev Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\jacqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -55,12 +55,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }
