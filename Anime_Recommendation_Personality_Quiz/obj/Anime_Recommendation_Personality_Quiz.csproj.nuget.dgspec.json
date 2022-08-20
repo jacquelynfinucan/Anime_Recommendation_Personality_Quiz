@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jacqu\\OneDrive\\Documents\\Jacquelyn\\Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj": {}
+    "C:\\Users\\Student\\Desktop\\Kev Side Projects\\Kev_and_Jac\\Shared_Side_Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jacqu\\OneDrive\\Documents\\Jacquelyn\\Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj": {
+    "C:\\Users\\Student\\Desktop\\Kev Side Projects\\Kev_and_Jac\\Shared_Side_Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jacqu\\OneDrive\\Documents\\Jacquelyn\\Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Desktop\\Kev Side Projects\\Kev_and_Jac\\Shared_Side_Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
         "projectName": "Anime_Recommendation_Personality_Quiz",
-        "projectPath": "C:\\Users\\jacqu\\OneDrive\\Documents\\Jacquelyn\\Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
-        "packagesPath": "C:\\Users\\jacqu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jacqu\\OneDrive\\Documents\\Jacquelyn\\Side Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\obj\\",
+        "projectPath": "C:\\Users\\Student\\Desktop\\Kev Side Projects\\Kev_and_Jac\\Shared_Side_Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\Desktop\\Kev Side Projects\\Kev_and_Jac\\Shared_Side_Projects\\Anime_Recommendation_Personality_Quiz\\Anime_Recommendation_Personality_Quiz\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jacqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
