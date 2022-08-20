@@ -8,7 +8,7 @@ GO
 USE Anime_Shows;
 GO
 
-CREATE TABLE anime_shows (
+CREATE TABLE shows (
     show_id int IDENTITY(1, 1) NOT NULL,
 	show_title varchar(100) NOT NULL,
     sincerity_vs_satire_score int NOT NULL,
@@ -21,4 +21,5 @@ CREATE TABLE anime_shows (
 	romance_score int NOT NULL,
 	controversy_score int NOT NULL,
 	description varchar(2000) NOT NULL,
-	CONSTRAINT PK_show_title PRIMARY KEY(show_id));
+	CONSTRAINT PK_show_id PRIMARY KEY(show_id)
+	);
