@@ -10,15 +10,14 @@ namespace Anime_Recommendation_Personality_Quiz
     {
         private int QuestionId { get; set; }
         private string QuestionText { get; set; }
-        private List<Answer> Answers { get; set; }
+        public List<Answer> Answers { get; set; }
 
         public QuizQuestion() { }
 
-        public QuizQuestion(int questionId, string questionText, List<Answer> answers)
+        public QuizQuestion(int questionId, string questionText)
         {
             this.QuestionId = questionId;
             this.QuestionText = questionText;
-            this.Answers = answers;
         }
     }
 }

@@ -13,6 +13,6 @@ namespace Anime_Recommendation_Personality_Quiz.DAO
         /// Retreieves all anime shows, maps them into c# objects and returns them in a list.
         /// </summary>
         /// <returns></returns>
-        List<AnimeShow> GetShows();
+        List<AnimeShow> GetAnimeShows();
     }
 }

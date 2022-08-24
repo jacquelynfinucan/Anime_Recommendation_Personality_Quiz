@@ -23,7 +23,10 @@ namespace Anime_Recommendation_Personality_Quiz.Models
         private int Humor_Score { get; set; } = 0;
         private int Romance_Score { get; set; } = 0;
         private int Controversy_Score { get; set; } = 5;
+
+        public UserPersonality() { }
+
     }
 
-    public UserPersonality() { }
+   
 }

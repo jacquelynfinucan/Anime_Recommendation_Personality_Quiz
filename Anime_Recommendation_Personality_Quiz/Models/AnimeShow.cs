@@ -8,6 +8,7 @@ namespace Anime_Recommendation_Personality_Quiz.Models
 {
     public class AnimeShow
     {
+        private int ShowId { get; set; }
         private string ShowTitle { get; set; }
         private string ShowDescription { get; set; }
         private int SincerityVsSatireScore { get; set; }
@@ -28,12 +29,12 @@ namespace Anime_Recommendation_Personality_Quiz.Models
          */
         private int IncompatibilityScore { get; set; } = 0; 
 
-        public AnimeShow(string showTitle, string ShowDescription, int sincerityVsSatireScore, int lightVsHeavyScore, 
-            int surfaceVsDepthScore, int optimismVsPessimismScore, int fantasyVsRealityScore, int sentimentalityScore, 
-            int humorScore, int romanceScore, int controversyScore)
+        public AnimeShow(int showId, string showTitle, int sincerityVsSatireScore, int lightVsHeavyScore, int surfaceVsDepthScore, 
+            int optimismVsPessimismScore, int fantasyVsRealityScore, int sentimentalityScore, int humorScore, int romanceScore, 
+            int controversyScore, string showDescription)
         {
+            this.ShowId = showId;
             this.ShowTitle = showTitle;
-            this.ShowDescription = ShowDescription;
             this.SincerityVsSatireScore = sincerityVsSatireScore;
             this.LightVsHeavyScore = lightVsHeavyScore;
             this.SurfaceVsDepthScore = surfaceVsDepthScore;
@@ -43,6 +44,7 @@ namespace Anime_Recommendation_Personality_Quiz.Models
             this.HumorScore = humorScore;
             this.RomanceScore = romanceScore;
             this.ControversyScore = controversyScore;
+            this.ShowDescription = showDescription;
         }
     }
 }

@@ -1,29 +1,33 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Threading;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
+using System.Configuration;
+using Anime_Recommendation_Personality_Quiz.DAO;
+using System.IO;
 
 namespace Anime_Recommendation_Personality_Quiz
 {
     public class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.Clear(); //required to make entire background the color
-            Console.ForegroundColor = ConsoleColor.Black;
+            // Get the connection string from the appsettings.json file
+            IConfigurationBuilder builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
 
-            Console.WriteLine("Hello, anime fans!");
+            IConfigurationRoot configuration = builder.Build();
 
-            Thread.Sleep(3000); //delays the script for 3 seconds in btwn so they don't appear all at once
+            string connectionString = "Data Source=DESKTOP-DFP2E16\\SERVER;Initial Catalog=Anime_Quiz;Integrated Security=True"; //configuration.GetConnectionString("Anime_Quiz");
 
-            Environment.Exit(0); //exits the console application
+            IAnimeShowDao animeShowDao = new AnimeShowSqlDao(connectionString);
+            IQuizQuestionDao quizQuestionDao = new QuizQuestionSqlDao(connectionString);
+            IAnswerDao answerDao = new AnswerSqlDao(connectionString);
 
-            //And we're just getting started!
-
-
-
-
-
+            AnimeQuizCLI application = new AnimeQuizCLI(animeShowDao, quizQuestionDao, answerDao);
+            application.Run();
 
 
         }
