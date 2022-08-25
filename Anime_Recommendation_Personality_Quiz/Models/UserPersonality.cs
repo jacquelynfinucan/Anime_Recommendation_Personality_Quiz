@@ -14,17 +14,105 @@ namespace Anime_Recommendation_Personality_Quiz.Models
          * Some default values are marginally biased towards one extreme or the other on a given scale. This is to account for 
          * the varying amount of opportunities to move the scale in either direction when answering the quiz questions.
          */
-        private int Sincerity_vs_Satire_Score { get; set; } = 10;
-        private int Light_vs_Heavy_Score { get; set; } = 8;
-        private int Surface_vs_Depth_Score { get; set; } = 8;
-        private int Optimism_vs_Pessimism_Score { get; set; } = 10;
-        private int Fantasy_vs_Reality_Score { get; set; } = 10;
-        private int Sentimentality_Score { get; set; } = 10;
-        private int Humor_Score { get; set; } = 0;
-        private int Romance_Score { get; set; } = 0;
-        private int Controversy_Score { get; set; } = 5;
+        public int SincerityVsSatireScore { get; set; } = 10;
+        public int LightVsHeavyScore { get; set; } = 8;
+        public int SurfaceVsDepthScore { get; set; } = 8;
+        public int OptimismVsPessimismScore { get; set; } = 10;
+        public int FantasyVsRealityScore { get; set; } = 10;
+        public int SentimentalityScore { get; set; } = 10;
+        public int HumorScore { get; set; } = 0;
+        public int RomanceScore { get; set; } = 0;
+        public int ControversyScore { get; set; } = 5;
 
         public UserPersonality() { }
+
+        /// <summary>
+        /// This method enforces bounds 0-20 for all UserPersonality scales to align with the anime show ratings' max and min.
+        /// </summary>
+        public void adjustScoreOutliers()
+        {
+            // Scale 1
+            if (SincerityVsSatireScore < 0)
+            {
+                SincerityVsSatireScore = 0;
+            }
+            else if (SincerityVsSatireScore > 20)
+            {
+                SincerityVsSatireScore = 20;
+            }
+            // Scale 2
+            if (LightVsHeavyScore < 0)
+            {
+                LightVsHeavyScore = 0;
+            }
+            else if (LightVsHeavyScore > 20)
+            {
+                LightVsHeavyScore = 20;
+            }
+            // Scale 3
+            if (SurfaceVsDepthScore < 0)
+            {
+                SurfaceVsDepthScore = 0;
+            }
+            else if (SurfaceVsDepthScore > 20)
+            {
+                SurfaceVsDepthScore = 20;
+            }
+            // Scale 4
+            if (OptimismVsPessimismScore < 0)
+            {
+                OptimismVsPessimismScore = 0;
+            }
+            else if (OptimismVsPessimismScore > 20)
+            {
+                OptimismVsPessimismScore = 20;
+            }
+            // Scale 5
+            if (FantasyVsRealityScore < 0)
+            {
+                FantasyVsRealityScore = 0;
+            }
+            else if (FantasyVsRealityScore > 20)
+            {
+                FantasyVsRealityScore = 20;
+            }
+            // Scale 6
+            if (SentimentalityScore < 0)
+            {
+                SentimentalityScore = 0;
+            }
+            else if (SentimentalityScore > 20)
+            {
+                SentimentalityScore = 20;
+            }
+            // Scale 7
+            if (HumorScore < 0)
+            {
+                HumorScore = 0;
+            }
+            else if (HumorScore > 20)
+            {
+                HumorScore = 20;
+            }
+            // Scale 8
+            if (RomanceScore < 0)
+            {
+                RomanceScore = 0;
+            }
+            else if (RomanceScore > 20)
+            {
+                RomanceScore = 20;
+            }
+            // Scale 9
+            if (ControversyScore < 0)
+            {
+                ControversyScore = 0;
+            }
+            else if (ControversyScore > 20)
+            {
+                ControversyScore = 20;
+            }
+        }
 
     }
 

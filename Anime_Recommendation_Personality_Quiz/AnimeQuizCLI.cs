@@ -16,6 +16,23 @@ namespace Anime_Recommendation_Personality_Quiz
         private readonly IQuizQuestionDao quizQuestionDao;
         private readonly IAnswerDao answerDao;
 
+        // Declare lists for all anime shows, quiz questions, and answers from the d/b
+        List<AnimeShow> animeShows;
+        List<QuizQuestion> quizQuestions;
+        List<Answer> answers;
+
+        // Declare an instance of userPersonality representing the user
+        UserPersonality userPersonality = new UserPersonality();
+
+        // Declare an int for userSelection
+        int userSelection = 0;
+
+        // Declare a lowest incompatibility variable at max value
+        int lowestIncompatibility = int.MaxValue;
+
+        // Declare a list of show matches for the user
+        List<AnimeShow> showMatches;
+
         public AnimeQuizCLI(IAnimeShowDao animeShowDao, IQuizQuestionDao quizQuestionDao, IAnswerDao answerDao)
         {
             this.animeShowDao = animeShowDao;
@@ -25,7 +42,6 @@ namespace Anime_Recommendation_Personality_Quiz
 
         public void Run()
         {
-            
 
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.Clear(); //required to make entire background the color
@@ -33,11 +49,63 @@ namespace Anime_Recommendation_Personality_Quiz
 
             Console.WriteLine("Hello, anime fans!");
 
-            Console.WriteLine();
             instantiateData();
 
-            Thread.Sleep(3000); //delays the script for 3 seconds in btwn so they don't appear all at once
-            
+            // Thread.Sleep(2000); //delays the script for 3 seconds in btwn so they don't appear all at once
+
+            /*
+             * The quiz runs within a foreach loop which prints the questions and answers, takes user input, 
+             * and adjusts their personality class based on their answers.
+            */
+            foreach (QuizQuestion question in quizQuestions)
+            {
+                Console.WriteLine(question.QuestionText);
+
+                Thread.Sleep(3000);
+
+                // Inner loop will access the list of answers associated with that question and print them
+                for (int i = 0; i < question.Answers.Count; i++)
+                {
+                    Console.WriteLine((i + 1) + ": " + question.Answers[i].AnswerText);
+                    Thread.Sleep(1000);
+
+                }
+                userSelection = promptForSelection(question.Answers.Count);
+
+                // The answer the user selected will be at index userSelecion -1
+                adjustUserPersonalityFromAnswer(question.Answers[userSelection - 1], userPersonality);
+            }
+
+            userPersonality.adjustScoreOutliers();
+
+            /*
+             * After each question has been answered, the user's personality is fully completed on the same scales
+             * as each anime show. Another loop compares the user's scales to the anime shows' scales and sets
+             * an incompatibility score for each anime show based on aggregate disparity. It will also track the
+             * lowest amount of incompatibility to determine the best show match(es) for the user.
+            */
+            foreach(AnimeShow show in animeShows)
+            {
+                int showIncompatibility = show.setAnimeShowIncompatibility(userPersonality);
+                if(showIncompatibility < lowestIncompatibility)
+                {
+                    lowestIncompatibility = showIncompatibility;
+                }
+            }
+
+            /*
+             * Now that we have an incompatbility score for each show, and know the value of the lowest incompatibility, 
+             * we can find all of the matches with that incompatability scoore to return to the user
+            */
+            foreach(AnimeShow show in animeShows)
+            {
+                if(show.IncompatibilityScore == lowestIncompatibility)
+                {
+                    showMatches.Add(show);
+                }
+            }
+
+            // Print up to three matches back to the user
 
             //Environment.Exit(0); //exits the console application
 
@@ -47,12 +115,12 @@ namespace Anime_Recommendation_Personality_Quiz
 
         }
 
-        public void instantiateData() 
+        public void instantiateData()
         {
             // Instantiate lists for all anime shows, quiz questions, and answers from the d/b
-            List<AnimeShow> animeShows = animeShowDao.GetAnimeShows();
-            List<QuizQuestion> quizQuestions = quizQuestionDao.GetQuizQuestions();
-            List<Answer> answers = answerDao.GetAnswers();
+            animeShows = animeShowDao.GetAnimeShows();
+            quizQuestions = quizQuestionDao.GetQuizQuestions();
+            answers = answerDao.GetAnswers();
 
             /* 
              * This loop will populate a list of answers associated with each question and set them to that question's
@@ -74,5 +142,34 @@ namespace Anime_Recommendation_Personality_Quiz
             //Console.WriteLine(answers.Count);
             //Console.WriteLine(animeShows.Count);
         }
+        public int promptForSelection(int amountOfAnswers)
+        {
+            while (userSelection < 1 || userSelection > amountOfAnswers)
+            {
+                Console.WriteLine("Please enter the number for your selection: ");
+                while (!int.TryParse(Console.ReadLine(), out userSelection))
+                {
+                    Console.WriteLine("Oops, we didn't catch that. Please enter the number for your selection: ");
+                }
+                if (userSelection < 1 || userSelection > amountOfAnswers)
+                {
+                    Console.WriteLine("Oops, that number doesn't match an answer.");
+                }
+            }
+            return userSelection;
+        }
+        public void adjustUserPersonalityFromAnswer(Answer selectedAnswer, UserPersonality userPersonality)
+        {
+            userPersonality.SincerityVsSatireScore += selectedAnswer.SincerityVsSatireImpact;
+            userPersonality.LightVsHeavyScore += selectedAnswer.LightVsHeavyImpact;
+            userPersonality.SurfaceVsDepthScore += selectedAnswer.SurfaceVsDepthImpact;
+            userPersonality.OptimismVsPessimismScore += selectedAnswer.OptimismVsPessimismImpact;
+            userPersonality.FantasyVsRealityScore += selectedAnswer.FantasyVsRealityImpact;
+            userPersonality.SentimentalityScore += selectedAnswer.SentimentalityImpact;
+            userPersonality.HumorScore += selectedAnswer.HumorImpact;
+            userPersonality.RomanceScore += selectedAnswer.RomanceImpact;
+            userPersonality.ControversyScore += selectedAnswer.ControversyImpact;
+        }
+
     }
 }

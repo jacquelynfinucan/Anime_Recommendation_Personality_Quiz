@@ -8,18 +8,18 @@ namespace Anime_Recommendation_Personality_Quiz
 {
     public class Answer
     {
-        private int AnswerId { get; set; }
+        public int AnswerId { get; set; }
         public int QuestionId { get; set; }
-        private string AnswerText { get; set; }
-        private int SincerityVsSatireImpact { get; set; }
-        private int LightVsHeavyImpact { get; set; }
-        private int SurfaceVsDepthImpact { get; set; }
-        private int OptimismVsPessimismImpact { get; set; }
-        private int FantasyVsRealityImpact { get; set; }
-        private int SentimentalityImpact { get; set; }
-        private int HumorImpact { get; set; }
-        private int RomanceImpact { get; set; }
-        private int ControversyImpact { get; set; }
+        public string AnswerText { get; set; }
+        public int SincerityVsSatireImpact { get; set; }
+        public int LightVsHeavyImpact { get; set; }
+        public int SurfaceVsDepthImpact { get; set; }
+        public int OptimismVsPessimismImpact { get; set; }
+        public int FantasyVsRealityImpact { get; set; }
+        public int SentimentalityImpact { get; set; }
+        public int HumorImpact { get; set; }
+        public int RomanceImpact { get; set; }
+        public int ControversyImpact { get; set; }
 
         public Answer() { }
 

@@ -8,8 +8,8 @@ namespace Anime_Recommendation_Personality_Quiz
 {
     public class QuizQuestion
     {
-        private int QuestionId { get; set; }
-        private string QuestionText { get; set; }
+        public int QuestionId { get; set; }
+        public string QuestionText { get; set; }
         public List<Answer> Answers { get; set; }
 
         public QuizQuestion() { }

@@ -8,26 +8,26 @@ namespace Anime_Recommendation_Personality_Quiz.Models
 {
     public class AnimeShow
     {
-        private int ShowId { get; set; }
-        private string ShowTitle { get; set; }
-        private string ShowDescription { get; set; }
-        private int SincerityVsSatireScore { get; set; }
-        private int LightVsHeavyScore { get; set; }
-        private int SurfaceVsDepthScore { get; set; }
-        private int OptimismVsPessimismScore { get; set; }
-        private int FantasyVsRealityScore { get; set; }
-        private int SentimentalityScore { get; set; }
-        private int HumorScore { get; set; }
-        private int RomanceScore { get; set; }
-        private int ControversyScore { get; set; }
+        public int ShowId { get; set; }
+        public string ShowTitle { get; set; }
+        public string ShowDescription { get; set; }
+        public int SincerityVsSatireScore { get; set; }
+        public int LightVsHeavyScore { get; set; }
+        public int SurfaceVsDepthScore { get; set; }
+        public int OptimismVsPessimismScore { get; set; }
+        public int FantasyVsRealityScore { get; set; }
+        public int SentimentalityScore { get; set; }
+        public int HumorScore { get; set; }
+        public int RomanceScore { get; set; }
+        public int ControversyScore { get; set; }
 
-        /*
-         * Incompatability score is an aggregate total of the UserPersonality scales' disparity with the fixed scores on the same scales
-         * for each instance of anime show. This score will be determined after comparing the user's personality class to each show
-         * after the quiz is completed. All of an anime show's scale scores are passed into the constructor; Incompatability score is
-         * instatiated at 0.
-         */
-        private int IncompatibilityScore { get; set; } = 0; 
+        /// <summary>
+        /// Incompatability score is an aggregate total of the UserPersonality scales' disparity with the fixed scores on the
+        /// same scales for each instance of anime show.This score will be determined after comparing the user's personality 
+        /// class to each show after the quiz is completed.All of an anime show's scale scores are passed into the constructor; 
+        /// Incompatability score is instatiated at 0.
+        /// </summary>
+        public int IncompatibilityScore { get; set; } = 0; 
 
         public AnimeShow(int showId, string showTitle, int sincerityVsSatireScore, int lightVsHeavyScore, int surfaceVsDepthScore, 
             int optimismVsPessimismScore, int fantasyVsRealityScore, int sentimentalityScore, int humorScore, int romanceScore, 
@@ -45,6 +45,21 @@ namespace Anime_Recommendation_Personality_Quiz.Models
             this.RomanceScore = romanceScore;
             this.ControversyScore = controversyScore;
             this.ShowDescription = showDescription;
+        }
+
+        public int setAnimeShowIncompatibility(UserPersonality userPersonality)
+        {
+            int disparity = Math.Abs(SincerityVsSatireScore - userPersonality.SincerityVsSatireScore);
+            disparity += Math.Abs(LightVsHeavyScore - userPersonality.LightVsHeavyScore);
+            disparity += Math.Abs(SurfaceVsDepthScore - userPersonality.SurfaceVsDepthScore);
+            disparity += Math.Abs(OptimismVsPessimismScore - userPersonality.OptimismVsPessimismScore);
+            disparity += Math.Abs(FantasyVsRealityScore - userPersonality.FantasyVsRealityScore);
+            disparity += Math.Abs(SentimentalityScore - userPersonality.SentimentalityScore);
+            disparity += Math.Abs(HumorScore - userPersonality.HumorScore);
+            disparity += Math.Abs(RomanceScore - userPersonality.RomanceScore);
+            disparity += Math.Abs(ControversyScore - userPersonality.ControversyScore);
+            IncompatibilityScore = disparity;
+            return disparity;
         }
     }
 }
