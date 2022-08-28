@@ -58,8 +58,12 @@ namespace Anime_Recommendation_Personality_Quiz.Models
             disparity += Math.Abs(HumorScore - userPersonality.HumorScore);
             disparity += Math.Abs(RomanceScore - userPersonality.RomanceScore);
             disparity += Math.Abs(ControversyScore - userPersonality.ControversyScore);
-            IncompatibilityScore = disparity;
+            this.IncompatibilityScore = disparity;
             return disparity;
+        }
+    public void printShow()
+        {
+            Console.WriteLine($"{ShowTitle}\n{ShowDescription}\n");
         }
     }
 }

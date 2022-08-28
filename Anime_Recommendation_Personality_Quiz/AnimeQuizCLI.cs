@@ -31,7 +31,7 @@ namespace Anime_Recommendation_Personality_Quiz
         int lowestIncompatibility = int.MaxValue;
 
         // Declare a list of show matches for the user
-        List<AnimeShow> showMatches;
+        List<AnimeShow> showMatches = new List<AnimeShow>();
 
         public AnimeQuizCLI(IAnimeShowDao animeShowDao, IQuizQuestionDao quizQuestionDao, IAnswerDao answerDao)
         {
@@ -47,11 +47,11 @@ namespace Anime_Recommendation_Personality_Quiz
             Console.Clear(); //required to make entire background the color
             Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Hello, anime fans!");
+            Console.WriteLine("Hello, anime fans!\n");
 
             instantiateData();
 
-            // Thread.Sleep(2000); //delays the script for 3 seconds in btwn so they don't appear all at once
+             //Thread.Sleep(3000); //delays the script for 3 seconds in btwn so they don't appear all at once
 
             /*
              * The quiz runs within a foreach loop which prints the questions and answers, takes user input, 
@@ -59,21 +59,24 @@ namespace Anime_Recommendation_Personality_Quiz
             */
             foreach (QuizQuestion question in quizQuestions)
             {
-                Console.WriteLine(question.QuestionText);
 
-                Thread.Sleep(3000);
+                Console.WriteLine($"\nQuestion #{question.QuestionId}: "); 
+                Console.WriteLine(question.QuestionText + "\n");
+
+                //Thread.Sleep(3000);
 
                 // Inner loop will access the list of answers associated with that question and print them
                 for (int i = 0; i < question.Answers.Count; i++)
                 {
-                    Console.WriteLine((i + 1) + ": " + question.Answers[i].AnswerText);
-                    Thread.Sleep(1000);
+                    Console.WriteLine((i + 1) + ": " + question.Answers[i].AnswerText + "\n");
+                    //Thread.Sleep(2000);
 
                 }
                 userSelection = promptForSelection(question.Answers.Count);
 
                 // The answer the user selected will be at index userSelecion -1
                 adjustUserPersonalityFromAnswer(question.Answers[userSelection - 1], userPersonality);
+                userSelection = 0; // Redefined so promptForSelection will run 
             }
 
             userPersonality.adjustScoreOutliers();
@@ -105,13 +108,25 @@ namespace Anime_Recommendation_Personality_Quiz
                 }
             }
 
-            // Print up to three matches back to the user
-
-            //Environment.Exit(0); //exits the console application
-
-            //And we're just getting started!
-
-
+            // Print only the first 3 matches if there are more than 3, both matches if 2, or the 1 and only
+            if (showMatches.Count > 2)
+            {
+                Console.WriteLine("We found some great anime matches for you. Here are three!\n");
+                showMatches[0].printShow();
+                showMatches[1].printShow();
+                showMatches[2].printShow();
+            }
+            else if (showMatches.Count == 2) 
+            {
+                Console.WriteLine("We found two perfect anime matches for you!");
+                showMatches[0].printShow();
+                showMatches[1].printShow();
+            }
+            else
+            {
+                Console.WriteLine("Great news - We found your one and only ideal anime match!");
+                showMatches[0].printShow();
+            }
 
         }
 
@@ -126,7 +141,7 @@ namespace Anime_Recommendation_Personality_Quiz
              * This loop will populate a list of answers associated with each question and set them to that question's
              * Answers list property.
             */
-            for (int i = 1; i < quizQuestions.Count; i++)
+            for (int i = 1; i <= quizQuestions.Count; i++)
             {
                 List<Answer> questionAnswers = new List<Answer>();
                 foreach (Answer answer in answers)
