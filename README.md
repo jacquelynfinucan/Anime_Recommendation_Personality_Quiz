@@ -1,6 +1,6 @@
 # Kacque's Anime Recommendation Personality Quiz
 
-""
+""  
 Welcome to the world's greatest anime recommendation quiz (if we do say so ourselves)...  
 And we do! (On a scale of 1-10, it's over 9,000!)  
 Simply answer these 15 questions, and our system will learn the deepest secrets of your heart!  
@@ -14,7 +14,7 @@ This quiz infers characteristics of the user and builds a personality class with
 
 ### Sample quiz question and answers showing how each answer would impact the user's personality scales
 
-Question #2:
+Question #2:  
 You’ve been isekai’d! The beast king’s sorcerer has summoned you to another world. He tells you that you are the chosen hero who must defeat a demon lord threatening to destroy the kingdom. You can choose one ally from the adventurer’s guild to join your party for the quest. Who do you choose?
 
 1: You pick the king’s purrfect princess! Sure, she’s a little spoiled and cold, but you’re a sucker for a tsundere – especially one with a cute tail and fuzzy ears, meow!  
