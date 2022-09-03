@@ -45,11 +45,11 @@ CREATE TABLE answers (
 	('You discover that you can travel back in time and enter the body of your younger self. What do you do with your new power?'), --7
 	('Your friends invite you to the arcade. What type of games do you play?'), --8
 	('What is your after-school club?'), --9
-	('You wake up and discover that you''ve switched bodies with someone you know. But whose body are you in…and what now?'), --10
+	('You wake up and discover that you''ve switched bodies with someone you know. But whose body are you in...and what now?'), --10
 	('How will you convince your crush to give you a chance?'), --11
 	('Uh oh, you''re in a "kill or be killed" survival game! How did you get into this mess?'), --12
 	('What''s your role in the guild?'), --13
-	('Your parents are never home…what’s the deal with that?'), --14
+	('Your parents are never home...What’s the deal with that?'), --14
 	('Someone important to you has died. How do you react?'); --15
 
 	--85 total answers
@@ -60,7 +60,7 @@ CREATE TABLE answers (
 	(1,	'You use your time freezing ability to secretly stop time and rescue the little girl, then unfreeze once you''re out of sight. It''s all in a day''s work and a hero needs no thanks.',	-1,	0,	0,	-1,	0,	1,	0,	0,	-1),
 	(1,	'Nothing. Random accidents happen every day. It''s sad, but it''s not your responsibility. You''re nobody''s unwitting protagonist – in this world or any other.',	0,	1,	1,	2,	0,	-1,	-1,	0,	1),
 	(2, 'You pick the king''s purrfect princess! Sure, she''s a little spoiled and cold, but you''re a sucker for a tsundere – especially one with a cute tail and fuzzy ears, meow!',	0,	-1,	0,	0,	0,	1,	1,	1,	0),
-	(2,	'You choose the sorcerer, duh! The king''s personal sorcerer, who was powerful enough to summon you here from another world - Who better to teach you this world''s magic? You''ll be a supreme spellcaster in no time!',	1,	0,	0,	0,	-1,	0,	0,	0,	0),
+	(2,	'You choose the sorcerer, duh! The king''s personal sorcerer, who was powerful enough to summon you here from another world - Who better to teach you this world''s magic?! You''ll be a supreme spellcaster in no time!',	1,	0,	0,	0,	-1,	0,	0,	0,	0),
 	(2,	'It''s gotta be the creepy loner in the shadowy corner of the guild house. You don''t care what they say he''s done, or why everyone seems to be afraid of him. He''s obviously a misunderstood badass with a secretly soft heart, and once you''re done kicking some demon tail, you can be part of his redemption arc!',	0,	0,	1,	1,	0,	1,	0,	1,	0),
 	(2,	'You pick the pint-sized pig-person everybody''s laughing at. Comic relief mascot? Heck yes! Plus, you''re pretty sure he packs a secret punch. You just need some sufficient danger to unlock his hidden power. You begin plotting all the ways you''re going to torture, ahem, train him to unleash it – KuKuKu!',	1,	0,	1,	0,	0,	-1,	0,	-1,	2),
 	(2,	'No one! You didn''t ask to come here, and you have zero interest in fighting a demon lord. After all, what''s he done to you? ''Good luck with that!'' You tell the king, as you head out in search of a tavern to party in.',	0,	0,	0,	1,	2,	-1,	0,	0,	-1),
@@ -71,7 +71,7 @@ CREATE TABLE answers (
 	(3,	'Where''s the arcade? You miss your video games and your legs are tired from traipsing all over the city.',	0,	0,	0,	1,	-1,	0,	0,	0,	0),
 	(3,	'Eh, you''ve seen enough. Time to head back to the inn for a nap – screw culture!',	1,	0,	0,	1,	0,	-1,	0,	0,	0),
 	(3,	'You don''t really care what you do, as long as you get to spend some time with your crush!',	0,	-1,	0,	-1,	0,	0,	0,	3,	0),
-	(4,	'Fight back? More bugs…less people…what''s the problem? You start making yourself a bug costume so you can blend in.',	2,	0,	0, 1,0,-1,	0,	0,	1),
+	(4,	'Fight back? More bugs...less people...what''s the problem? You start making yourself a bug costume so you can blend in.',	2,	0,	0, 1,0,-1,	0,	0,	1),
 	(4,	'Giant bugs? Gross gross gross! You''ll be running and hiding, thank you very much.',	0,	0,	-1,	0,	0,	0,	1,	0,	-1),
 	(4,	'Giant bugs, meet giant flamethrower. Collateral damage is half the fun!',	0,	1,	0,	1,	1,	-1,	0,	0,	2),
 	(4,	'You know exactly what to do – clench your fists, bend your knees, and scream really loudly. If anime has taught you anything, this will bring you incredible power, and then you can rip them apart with your bare hands!',	1,	0,	0,	-1,	-1,	0,	1,	0,	1),
@@ -97,30 +97,30 @@ CREATE TABLE answers (
 	(8,	'A sports game would be great. Better yet, let''s just play a game of basketball or soccer! Screens are for the unathletic!',	0,	0,	-1,	0,	1,	0,	0,	0,	0),
 	(8,	'Ew, no way – if they invited you to the arcade, those are nerds, not your friends. You''ll be at the mall.',	0,	0,	0,	1,	1,	-1,	0,	0,	0),
 	(8,	'Anything with great graphics and a rich backstory – you want to be spirited away, completely immersed in the game''s world.',	0,	0,	1,	0,	-1,	0,	0,	0,	0),
-	(8,	'There''s too many people at the arcade…You''ll just stay home and play your favorite MMORPG online.',	0,	0,	0,	1,	-2,	-1,	0,	0,	0),
+	(8,	'There''s too many people at the arcade...You''ll just stay home and play your favorite MMORPG online.',	0,	0,	0,	1,	-2,	-1,	0,	0,	0),
 	(9,	'Is there a club for going home and writing down the names of everyone you hate? DIE SCUM!',	0,	1,	0,	2,	0,	-2,	0,	0,	1),
 	(9,	'Gamers'' club! Playing video games, talking about video games, making video games. Literally anything video game related works for you.',	0,	0,	0,	0,	-2,	0,	0,	0, 0),
 	(9,	'High School Idols Club – you have so much to express, and you want to express it as cutely as possible so your fans can connect and feel your love!',	-1,	-1,	-1,	0,	0,	1,	0,	0,	-1),
-	(9,	'Literature club! Dazai once said, ‘There is one thing that humans have that other creatures don''t... and that''s secrets.'' You want to discover all the secrets of the human heart.',	-1,	0,	1,	0,	0,	0,	0,	1,	0),
+	(9,	'Literature club! Dazai once said, "There is one thing that humans have that other creatures don''t...and that''s secrets." You want to discover all the secrets of the human heart.',	-1,	0,	1,	0,	0,	0,	0,	1,	0),
 	(9,	'You''ll join any club if your friends are there! You just want to hang out and gossip with your favorite people, you don''t really care about the particulars.',	0,	-1,	0,	0,	0,	1,	0,	0,	0),
 	(9,	'You''re too busy with the student council to join some social club. Let the kids play, you''re going to run the world one day.',	-1,	1,	1,	0,	1,	-1,	0,	0,	1),
 	(9,	'It''s gotta be martial arts or contact sports for you! You''ll join whichever one has an open spot – and crush all your opponents! You''ll do whatever it takes to win.',	0,	1,	0,	1,	0,	0,	0,	0,	1),
-	(10, 'You''ve become your greatest rival! Now you have to decide; do you compete at your maximum ability, and risk defeating yourself and winning for your enemy, or do you throw the contest – allowing ‘you'' to be victorious and bringing shame to your rival, at the expense of your own integrity, and without ever knowing who would have truly won?',	-1,	0,	1,	0,	0,	0,	0,	0,	1),
+	(10, 'You''ve become your greatest rival! Now you have to decide; do you compete at your maximum ability, and risk defeating yourself and winning for your enemy, or do you throw the contest – allowing ''you'' to be victorious and bringing shame to your rival, at the expense of your own integrity, and without ever knowing who would have truly won?',	-1,	0,	1,	0,	0,	0,	0,	0,	1),
 	(10, 'You''re in the body of your crush. So…they''re in yours? This is so awkward! You can''t do (or touch) anything that would embarrass them! You have to find yourself and switch back ASAP – and maybe fall in love in the process.',	0,	-1,	0,	-1,	0,	1,	0,	2,	0),
 	(10, 'You''ve become your cat! Meanwhile, your body is acting crazy – well, crazy for a human anyway! You''d love to bask in the leisurely life of a housecat, but you have to follow your body around and make sure your cat doesn''t get you both killed with his mischievous and oblivious antics!',	0,	-1,	-1,	0,	-1,	0,	1,	0,	0),
-	(10, 'You body swapped with your….mom?! What kind of anime is this, some lame Freaky Friday rip-off? You may as well do what all the anime parents do and take an indefinite overseas trip while your kid stays home alone! Aloha, Hawaii!',	2,	0,	0,	0,	0,	-1,	1,	0,	0),
-	(10, 'You''re in the body of your school''s principal. You can''t wait to get to school and announce casual Fridays, a whole new lunch menu, and no more homework! Gotta take advantage of the situation now since you could switch back at any moment. Hmm…think there''s time to boost your grades and make yourself top of the class?!',	1,	0,	0,	0,	0,	0,	1,	0,	1),
+	(10, 'You body swapped with your...mom?! What kind of anime is this, some lame Freaky Friday rip-off? You may as well do what all the anime parents do and take an indefinite overseas trip while your kid stays home alone! Aloha, Hawaii!',	2,	0,	0,	0,	0,	-1,	1,	0,	0),
+	(10, 'You''re in the body of your school''s principal. You can''t wait to get to school and announce casual Fridays, a whole new lunch menu, and no more homework! Gotta take advantage of the situation now since you could switch back at any moment. Hmm...think there''s time to boost your grades and make yourself top of the class?!',	1,	0,	0,	0,	0,	0,	1,	0,	1),
 	(11, 'Relentlessly nag them and play practical jokes on them – it''s the only way you know how to show your feelings! Besides, they''re cute when they''re flustered.',	0,	-1,	0,	0,	0,	0,	1,	0,	1),
-	(11, 'You write them an epic poem about your love and leave it unsigned in their shoe locker. Since you''re obviously soulmates, they''ll know who it''s from…probably.',	0,	0,	1,	0,	0,	1,	0,	1,	0),
+	(11, 'You write them an epic poem about your love and leave it unsigned in their shoe locker. Since you''re obviously soulmates, they''ll know who it''s from...probably.',	0,	0,	1,	0,	0,	1,	0,	1,	0),
 	(11, 'You''ll probably just trip and fall on top of them, landing in a tantalizing and compromising position – the classic anime meet-cute!',	1,	0,	-1,	0,	0,	0,	1,	0,	1),
 	(11, 'You''re going to make them swoon by beating up all their enemies! Who wouldn''t develop romantic feelings for the person who just saved their life?',	0,	1,	0,	0,	0,	-1,	0,	0,	1),
-	(11, 'You''ll get summoned to another world together, where unfamiliar lands and dangers will force you to work together…and fall in love.',	0,	0,	1,	0,	-2,	0,	0,	1,	0),
+	(11, 'You''ll get summoned to another world together, where unfamiliar lands and dangers will force you to work together...and fall in love.',	0,	0,	1,	0,	-2,	0,	0,	1,	0),
 	(11, 'Simple – you''ll just kidnap them and hold them captive until they promise to love you and stay by your side forever!',	0,	2,	0,	1,	0,	-1,	0,	0,	2),
 	(12, 'It was an accident; You thought you were in a full dive RPG! A gratuitously violent game, sure, but how were you supposed to know it was real?',	0,	1,	0,	0,	-1,	-1,	0,	0,	1),
 	(12, 'Actually, you''re the one who started the game, and now you feel so alive! Bwahahaha!',	0,	2,	1,	1,	0,	-1,	0,	0,	3),
 	(12, 'You had to enter the game. It was the only way to protect the one you love!',	-1,	0,	0,	-1,	0,	1,	0,	2,	0),
 	(12, 'The winner becomes a god. Who can pass that up? You will rule this universe!',	0,	0,	1,	0,	-1,	0,	0,	0,	1),
-	(12, 'So there was this girl – more like an angel – and she had the most beautiful body, and she was talking really fast and saying all these nice things about living in a castle together and…Oops. You might have been tricked.',	1,	0,	0,	-1,	0,	1,	0,	1,	0),
+	(12, 'So there was this girl – more like an angel – and she had the most beautiful body, and she was talking really fast and saying all these nice things about living in a castle together and...Oops - You might have been tricked.',	1,	0,	0,	-1,	0,	1,	0,	1,	0),
 	(13, 'You''re a battle mage. You''ve mastered all of the elements. When the guild goes into battle, you are a second-line combatant, throwing fierce spells at your enemies while your tanks hold the front line.',	0,	1,	0,	0,	-1,	0,	0,	0,	1),
 	(13, 'You just want everyone to be friends and get along! You plan to bring peace to the warring guilds using the healing power of music; gather your besties and get ready to sing, dance, and spread the love!',	-1,	-1,	0,	-2,	0,	1,	0,	0,	-1),
 	(13, 'You''re a tank. You like being on the front lines, pounding your enemies into the dirt and whipping out some cool sword skills. Blades all day!',	0,	0,	0,	1,	0,	-1,	0,	0,	2),
@@ -128,9 +128,9 @@ CREATE TABLE answers (
 	(13, 'You''re a support magician. You help boost your guild''s stats, debuff your enemies, heal injuries, and cure status ailments.',	0,	-1,	0,	-1,	0,	1,	0,	0,	-1),
 	(13, 'You''re the leader. You don''t always play a consistent role, but you involve yourself in all of them. You''re the one deciding how to keep everyone alive and take your guild to the next level.',	0,	0,	1,	0,	0,	1,	0,	0,	1),
 	(13, 'Ugh, what is this, dungeons and dragons? That''s a hard pass for you, way too nerdy.',	1,	0,	0,	1,	2,	0,	1,	0,	0),
-	(14, 'It was just you and your mom until she got remarried. Now she lives abroad with your new stepfather, and you live unsupervised in your old house with the hot new stepsibling you''ve just met…well this could be interesting! ;) ',	1,	-1,	0,	0,	-1,	0,	1,	2,	1),
+	(14, 'It was just you and your mom until she got remarried. Now she lives abroad with your new stepfather, and you live unsupervised in your old house with the hot new stepsibling you''ve just met...well this could be interesting! ;) ',	1,	-1,	0,	0,	-1,	0,	1,	2,	1),
 	(14, 'Both of your parents travel for business. You actually have no idea what they do, and you couldn''t care less. You don''t need anyone, you can take care of yourself.',	0,	1,	0,	1,	0,	-1,	0,	0,	0),
-	(14, 'What kind of question is this – your parents are always home. They''re just in another room...all the time…? Come to think, you haven''t actually seen them in years. But someone''s always leaving you leftovers, so they must be around here somewhere!',	2,	0,	0,	0,	0,	0,	1,	0,	0),
+	(14, 'What kind of question is this – your parents are always home. They''re just in another room...all the time...? Come to think, you haven''t actually seen them in years. But someone''s always leaving you leftovers, so they must be around here somewhere!',	2,	0,	0,	0,	0,	0,	1,	0,	0),
 	(14, 'Both your parents are dead. You raise your younger sibling alone even though you''re only 16. Good thing you are unusually mature for your age, live in a time vortex so you can work two jobs and get straight A''s in school, and no one in your community pays attention.',	1,	1,	1,	0,	1,	0,	0,	0,	0),
 	(14, 'You had parents in your old life, but ever since you got isekai''d, you''ve been on your own. You thought about them for about a day, but then you got distracted by living a way more awesome life.',	1,	0,	-1,	0,	-2,	-1,	1,	0,	0),
 	(14, 'Never home?! You wish they would leave, maybe then you''d get some peace and quiet! Your family is always nagging you about living up to your potential and they''re way too interested in your romantic life.',	0,	1,	0,	1,	1,	0,	0,	1,	0),

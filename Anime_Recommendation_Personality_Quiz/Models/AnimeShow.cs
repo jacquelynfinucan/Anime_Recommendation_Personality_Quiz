@@ -27,10 +27,10 @@ namespace Anime_Recommendation_Personality_Quiz.Models
         /// class to each show after the quiz is completed.All of an anime show's scale scores are passed into the constructor; 
         /// Incompatability score is instatiated at 0.
         /// </summary>
-        public int IncompatibilityScore { get; set; } = 0; 
+        public int IncompatibilityScore { get; set; } = 0;
 
-        public AnimeShow(int showId, string showTitle, int sincerityVsSatireScore, int lightVsHeavyScore, int surfaceVsDepthScore, 
-            int optimismVsPessimismScore, int fantasyVsRealityScore, int sentimentalityScore, int humorScore, int romanceScore, 
+        public AnimeShow(int showId, string showTitle, int sincerityVsSatireScore, int lightVsHeavyScore, int surfaceVsDepthScore,
+            int optimismVsPessimismScore, int fantasyVsRealityScore, int sentimentalityScore, int humorScore, int romanceScore,
             int controversyScore, string showDescription)
         {
             this.ShowId = showId;
@@ -60,10 +60,6 @@ namespace Anime_Recommendation_Personality_Quiz.Models
             disparity += Math.Abs(ControversyScore - userPersonality.ControversyScore);
             this.IncompatibilityScore = disparity;
             return disparity;
-        }
-    public void printShow()
-        {
-            Console.WriteLine($"{ShowTitle}\n{ShowDescription}\n");
         }
     }
 }

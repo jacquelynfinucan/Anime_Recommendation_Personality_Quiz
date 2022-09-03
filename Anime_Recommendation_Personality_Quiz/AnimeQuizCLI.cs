@@ -47,11 +47,21 @@ namespace Anime_Recommendation_Personality_Quiz
             Console.Clear(); //required to make entire background the color
             Console.ForegroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("Hello, anime fans!\n");
+            Console.WriteLine("Welcome to the world's greatest anime recommender quiz (if we do say so ourselves)...");
+            Thread.Sleep(2000); //delays the script for 2 seconds in btwn so all text doesn't appear at once
+            Console.WriteLine("And we do! (On a scale of 1-10, it's over 9,000!)");
+            Thread.Sleep(2000);
+            Console.WriteLine("Simply answer these 15 questions, and our system will learn the deepest secrets of your heart!");
+            Thread.Sleep(2000);
+            Console.WriteLine("But don't worry. We won't tell anybody. ;p ");
+            Thread.Sleep(2000);
+            Console.WriteLine("We'll just let you know your next anime obsession - believe it!");
+            Thread.Sleep(2000);
+            Console.WriteLine("So get ready, because here comes your first question...");
 
             instantiateData();
 
-             //Thread.Sleep(3000); //delays the script for 3 seconds in btwn so they don't appear all at once
+            Thread.Sleep(3000); 
 
             /*
              * The quiz runs within a foreach loop which prints the questions and answers, takes user input, 
@@ -59,17 +69,18 @@ namespace Anime_Recommendation_Personality_Quiz
             */
             foreach (QuizQuestion question in quizQuestions)
             {
+                Console.WriteLine("\n************************");
+                Console.WriteLine($"Question #{question.QuestionId}: "); 
+                Console.WriteLine(GetWordWrappedTextBlock(question.QuestionText) + "\n");
 
-                Console.WriteLine($"\nQuestion #{question.QuestionId}: "); 
-                Console.WriteLine(question.QuestionText + "\n");
-
-                //Thread.Sleep(3000);
+                Thread.Sleep(3000);
 
                 // Inner loop will access the list of answers associated with that question and print them
                 for (int i = 0; i < question.Answers.Count; i++)
                 {
-                    Console.WriteLine((i + 1) + ": " + question.Answers[i].AnswerText + "\n");
-                    //Thread.Sleep(2000);
+                    Console.WriteLine((i + 1) + ": ");
+                    Console.WriteLine(GetWordWrappedTextBlock(question.Answers[i].AnswerText) + "\n");
+                    Thread.Sleep(2000);
 
                 }
                 userSelection = promptForSelection(question.Answers.Count);
@@ -108,25 +119,52 @@ namespace Anime_Recommendation_Personality_Quiz
                 }
             }
 
+            Thread.Sleep(1000);
+            Console.WriteLine("\n************************");
+            Console.WriteLine("That's all of the questions we have for you!\nWhile the system calculates the results " 
+                + "and finds your perfect anime match...\n"
+                + "Here are some things we have learned about your personality:\n");
+            Thread.Sleep(1500);
+
+            List<string> personalityFeedback = userPersonality.generatePersonalityFeedback();
+
+            foreach(string feedback in personalityFeedback)
+            {
+                Console.WriteLine(feedback);
+                Thread.Sleep(2000);
+            }
+
+            Thread.Sleep(1000);
+            Console.WriteLine("\n************************");
+            Console.WriteLine("Get ready, because here comes your new favorite anime!");
+            Thread.Sleep(2000);
             // Print only the first 3 matches if there are more than 3, both matches if 2, or the 1 and only
             if (showMatches.Count > 2)
             {
-                Console.WriteLine("We found some great anime matches for you. Here are three!\n");
-                showMatches[0].printShow();
-                showMatches[1].printShow();
-                showMatches[2].printShow();
+                Console.WriteLine("\nBased on your personality, we think these three anime shows will be perfect for you!\n");
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[0].ShowTitle));
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[0].ShowDescription) + "\n");
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[1].ShowTitle));
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[1].ShowDescription) + "\n");
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[2].ShowTitle));
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[2].ShowDescription) + "\n");
             }
             else if (showMatches.Count == 2) 
             {
-                Console.WriteLine("We found two perfect anime matches for you!");
-                showMatches[0].printShow();
-                showMatches[1].printShow();
+                Console.WriteLine("\nWe found two great anime matches for your personality!\n");
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[0].ShowTitle));
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[0].ShowDescription) + "\n");
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[1].ShowTitle));
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[1].ShowDescription) + "\n");
             }
             else
             {
-                Console.WriteLine("Great news - We found your one and only ideal anime match!");
-                showMatches[0].printShow();
+                Console.WriteLine("\nYou're a particular sort, but we found your one and only ideal anime match!\n");
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[0].ShowTitle));
+                Console.WriteLine(GetWordWrappedTextBlock(showMatches[0].ShowDescription) + "\n");
             }
+            Console.WriteLine("\n************************");
+            Console.WriteLine("*Thanks for taking our quiz! We hope you enjoy your anime binging!* :D ");
 
         }
 
@@ -153,15 +191,12 @@ namespace Anime_Recommendation_Personality_Quiz
                 }
                 quizQuestions[i - 1].Answers = questionAnswers;
             }
-            //Console.WriteLine(quizQuestions.Count);
-            //Console.WriteLine(answers.Count);
-            //Console.WriteLine(animeShows.Count);
         }
         public int promptForSelection(int amountOfAnswers)
         {
             while (userSelection < 1 || userSelection > amountOfAnswers)
             {
-                Console.WriteLine("Please enter the number for your selection: ");
+                Console.WriteLine("**Please enter the number for your selection**: ");
                 while (!int.TryParse(Console.ReadLine(), out userSelection))
                 {
                     Console.WriteLine("Oops, we didn't catch that. Please enter the number for your selection: ");
@@ -184,6 +219,46 @@ namespace Anime_Recommendation_Personality_Quiz
             userPersonality.HumorScore += selectedAnswer.HumorImpact;
             userPersonality.RomanceScore += selectedAnswer.RomanceImpact;
             userPersonality.ControversyScore += selectedAnswer.ControversyImpact;
+        }
+
+        /// <summary>
+        /// This method will wrap text, responsive to console window size. This method was found at: 
+        /// https://rianjs.net/2016/03/line-wrapping-at-word-boundaries-for-console-applications-in-csharp
+        /// </summary>
+        /// <param name="textBlock"></param>
+        /// <returns></returns>
+        public static string GetWordWrappedTextBlock(string textBlock)
+        {
+            if (string.IsNullOrWhiteSpace(textBlock))
+            {
+                return string.Empty;
+            }
+
+            var approxLineCount = textBlock.Length / Console.WindowWidth;
+            var lines = new StringBuilder(textBlock.Length + (approxLineCount * 4));
+
+            for (var i = 0; i < textBlock.Length;)
+            {
+                var grabLimit = Math.Min(Console.WindowWidth, textBlock.Length - i);
+                var line = textBlock.Substring(i, grabLimit);
+
+                var isLastChunk = grabLimit + i == textBlock.Length;
+
+                if (isLastChunk)
+                {
+                    i = i + grabLimit;
+                    lines.Append(line);
+                }
+                else
+                {
+                    var lastSpace = line.LastIndexOf(" ", StringComparison.Ordinal);
+                    lines.AppendLine(line.Substring(0, lastSpace));
+
+                    //Trailing spaces needn't be displayed as the first character on the new line
+                    i = i + lastSpace + 1;
+                }
+            }
+            return lines.ToString();
         }
 
     }
